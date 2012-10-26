@@ -1,0 +1,19 @@
+package com.ivo.hibernate.acode;
+
+/**
+ * AcodeId entity. @author MyEclipse Persistence Tools
+ */
+public class AcodeId extends AbstractAcodeId implements java.io.Serializable {
+
+	// Constructors
+
+	/** default constructor */
+	public AcodeId() {
+	}
+
+	/** full constructor */
+	public AcodeId(String codeCate, String code, String codeExt) {
+		super(codeCate, code, codeExt);
+	}
+
+}

@@ -1,0 +1,89 @@
+package com.ivo.hibernate.acode;
+
+/**
+ * AbstractAcodeId entity provides the base persistence definition of the
+ * AcodeId entity. @author MyEclipse Persistence Tools
+ */
+
+public abstract class AbstractAcodeId implements java.io.Serializable {
+
+	// Fields
+
+	private String codeCate;
+	private String code;
+	private String codeExt;
+
+	// Constructors
+
+	/** default constructor */
+	public AbstractAcodeId() {
+	}
+
+	/** full constructor */
+	public AbstractAcodeId(String codeCate, String code, String codeExt) {
+		this.codeCate = codeCate;
+		this.code = code;
+		this.codeExt = codeExt;
+	}
+
+	// Property accessors
+
+	public String getCodeCate() {
+		return this.codeCate;
+	}
+
+	public void setCodeCate(String codeCate) {
+		this.codeCate = codeCate;
+	}
+
+	public String getCode() {
+		return this.code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getCodeExt() {
+		return this.codeExt;
+	}
+
+	public void setCodeExt(String codeExt) {
+		this.codeExt = codeExt;
+	}
+
+	public boolean equals(Object other) {
+		if ((this == other))
+			return true;
+		if ((other == null))
+			return false;
+		if (!(other instanceof AbstractAcodeId))
+			return false;
+		AbstractAcodeId castOther = (AbstractAcodeId) other;
+
+		return ((this.getCodeCate() == castOther.getCodeCate()) || (this
+				.getCodeCate() != null
+				&& castOther.getCodeCate() != null && this.getCodeCate()
+				.equals(castOther.getCodeCate())))
+				&& ((this.getCode() == castOther.getCode()) || (this.getCode() != null
+						&& castOther.getCode() != null && this.getCode()
+						.equals(castOther.getCode())))
+				&& ((this.getCodeExt() == castOther.getCodeExt()) || (this
+						.getCodeExt() != null
+						&& castOther.getCodeExt() != null && this.getCodeExt()
+						.equals(castOther.getCodeExt())));
+	}
+
+	public int hashCode() {
+		int result = 17;
+
+		result = 37 * result
+				+ (getCodeCate() == null ? 0 : this.getCodeCate().hashCode());
+		result = 37 * result
+				+ (getCode() == null ? 0 : this.getCode().hashCode());
+		result = 37 * result
+				+ (getCodeExt() == null ? 0 : this.getCodeExt().hashCode());
+		return result;
+	}
+
+}

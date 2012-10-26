@@ -1,0 +1,29 @@
+package com.ivo.hibernate.acode;
+
+import java.sql.Timestamp;
+
+/**
+ * Acode entity. @author MyEclipse Persistence Tools
+ */
+public class Acode extends AbstractAcode implements java.io.Serializable {
+
+	// Constructors
+
+	/** default constructor */
+	public Acode() {
+	}
+
+	/** minimal constructor */
+	public Acode(AcodeId id, String sequence, Timestamp evtTimestamp) {
+		super(id, sequence, evtTimestamp);
+	}
+
+	/** full constructor */
+	public Acode(AcodeId id, String subitem, String codeDsc, String ext1,
+			String ext2, String ext3, String ext4, String ext5,
+			String sequence, Timestamp evtTimestamp) {
+		super(id, subitem, codeDsc, ext1, ext2, ext3, ext4, ext5, sequence,
+				evtTimestamp);
+	}
+
+}

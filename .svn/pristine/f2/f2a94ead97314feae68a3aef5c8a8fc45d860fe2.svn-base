@@ -1,0 +1,32 @@
+package com.ivo.action;
+
+import org.hibernate.HibernateException;
+
+import com.ivo.hibernate.acode.Acode;
+import com.ivo.hibernate.acode.AcodeDAO;
+import com.ivo.hibernate.acode.AcodeId;
+
+public class HibernateReadTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		AcodeDAO acodeDAO = new AcodeDAO();
+		try{
+			AcodeId acodeId = new AcodeId("NWEB","0001","CAT1");
+			Acode acode = acodeDAO.findById(acodeId);
+			System.out.println("ext1: " + acode.getExt1());
+		}catch (HibernateException e) {
+			e.printStackTrace();
+		}finally{
+			try{
+				acodeDAO.getSession().close();
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+	}
+
+}
